@@ -1,4 +1,4 @@
-"""Support for Tesla door locks."""
+"""Support for Tesla locks."""
 import logging
 
 from homeassistant.components.lock import LockEntity
@@ -23,7 +23,7 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
 
 
 class TeslaLock(TeslaDevice, LockEntity):
-    """Representation of a Tesla door lock."""
+    """Representation of a Tesla lock."""
 
     def __init__(self, tesla_device, controller, config_entry):
         """Initialise of the lock."""
@@ -32,13 +32,13 @@ class TeslaLock(TeslaDevice, LockEntity):
 
     async def async_lock(self, **kwargs):
         """Send the lock command."""
-        _LOGGER.debug("Locking doors for: %s", self._name)
+        _LOGGER.debug("Locking: %s", self._name)
         await self.tesla_device.lock()
 
     async def async_unlock(self, **kwargs):
         """Send the unlock command."""
-        _LOGGER.debug("Unlocking doors for: %s", self._name)
-        await self.tesla_device.unlock()
+        _LOGGER.error("Unlocking: %s", self._name)
+        #await self.tesla_device.unlock()
 
     @property
     def is_locked(self):
