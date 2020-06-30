@@ -12,6 +12,7 @@ TESLA_COMPONENTS = [
     "binary_sensor",
     "device_tracker",
     "switch",
+    "cover",
 ]
 ICONS = {
     "battery sensor": "mdi:battery",
