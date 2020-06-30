@@ -37,8 +37,8 @@ class TeslaLock(TeslaDevice, LockEntity):
 
     async def async_unlock(self, **kwargs):
         """Send the unlock command."""
-        _LOGGER.error("Unlocking: %s", self._name)
-        #await self.tesla_device.unlock()
+        _LOGGER.debug("Unlocking: %s", self._name)
+        await self.tesla_device.unlock()
 
     @property
     def is_locked(self):
